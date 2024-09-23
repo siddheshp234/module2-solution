@@ -1,0 +1,77 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    font-size: 2.25em; /* 75% larger than default */
+    margin-bottom: 20px;
+}
+
+.section-container {
+    overflow: hidden; /* Clearfix for floating sections */
+    margin-top: 300%;
+}
+
+.section {
+    float: left;
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid black;
+    position: relative; /* To position the section title */
+    color: white;
+}
+
+/* Section Colors */
+.section:nth-child(1) {
+    background-color: #ff6347; /* Tomato */
+}
+
+.section:nth-child(2) {
+    background-color: #4682b4; /* Steel Blue */
+}
+
+.section:nth-child(3) {
+    background-color: #32cd32; /* Lime Green */
+}
+
+/* Section Title */
+.section-title {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 5px;
+    border: 1px solid black;
+}
+
+/* Desktop view (992px and above) */
+@media (min-width: 992px) {
+    .section {
+        width: calc(33.33% - 20px); /* 3 equal sections with margin */
+    }
+}
+
+/* Tablet view (768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .section {
+        width: calc(50% - 20px); /* 2 sections in first row */
+    }
+    .section:nth-child(3) {
+        width: 100%; /* Full width for 3rd section */
+    }
+}
+
+/* Mobile view (767px and below) */
+@media (max-width: 767px) {
+    .section {
+        width: 100%; /* Full width for all sections */
+    }
+}
